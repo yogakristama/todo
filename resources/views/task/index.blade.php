@@ -15,6 +15,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Action</th>
+            <th>Images</th>
             </tr>
             </thead>
             @foreach ($task as $tasks)
@@ -27,9 +28,9 @@
                 <input type="hidden" name= "task_id" value="{{ $tasks->id }}" />
                 <button type="submit" class="btn btn-danger">Delete </button>
             </form>
-            
             </td>
             
+            <td><a href="/storage/{{ $tasks->image }}"> {{$tasks->image}} </a></td>
             </tr>
             @endforeach
 

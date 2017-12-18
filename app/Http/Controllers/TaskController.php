@@ -23,9 +23,15 @@ class TaskController extends Controller {
                 
                 if ($request->isMethod('post')){
                     $taskName = $request->input('task_name');
+                    $taskImage =$request->file('task_image');
                     
-                    $returnValue = DB::insert('insert into todo (name) values (?)', 
-                    [$taskName]);
+                    if($taskImage){
+                        $dir = storage_path ('app/public');
+                        $taskImage->move($dir, $taskImage->getClientOriginalName());
+                        }
+                        
+                    $returnValue = DB::insert('insert into todo (name, image) values (?, ?)', 
+                    [$taskName,$taskImage->getClientOriginalName()]);
                 
                     if($returnValue){
                         $data =[

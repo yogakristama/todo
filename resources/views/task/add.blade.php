@@ -11,10 +11,14 @@
     @if($success)
         <div class="alert alert-success" role="alert"> data succesfully saved.</div>
     @endif
-            <form class ="form" method="POST">
+            <form class ="form" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="task_name">Product Name</label>
+                    <label for="task_name">Task Name</label>
                     <input type="text" class="form-control" id="task_name" name="task_name" placeholder="Task Name">
+                </div>
+                <div class="form-group" >
+                    <label for="task_name">Task Image</label>
+                    <input type="file" class="form-control" id="task_image" name="task_image" placeholder="Task Image">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-small">Submit</button>

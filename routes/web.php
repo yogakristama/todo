@@ -29,3 +29,9 @@ route::get('/task/edit/{task_id}',"TaskController@edit");
 route::post('/task/edit/{task_id}',"TaskController@edit");
 
 route::post('/task/delete',"TaskController@delete");
+
+route::get('/media',"MediaController@index");
+
+route::get('/media/upload',"MediaController@upload");
+
+route::post('/media/upload',"MediaController@upload");
