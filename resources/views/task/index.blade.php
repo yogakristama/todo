@@ -31,6 +31,7 @@
             </td>
             
             <td><a href="/storage/{{ $tasks->image }}"> {{$tasks->image}} </a></td>
+            <!-- jangan lupa link kan php artisan storage:link -->
             </tr>
             @endforeach
 
