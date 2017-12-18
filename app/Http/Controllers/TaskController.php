@@ -36,4 +36,43 @@ class TaskController extends Controller {
                 }
                 return view ('task/add', $data);
             }
-        }
+
+    function edit($task_id, Request $request){
+        $tasks = DB::select('Select * from todo where id=?', [$task_id]);
+                
+        $task = reset($tasks);
+                
+        $success= false;
+        
+                if($request->isMethod('post')){
+                    $taskName = $request->input('task_name');
+                    
+                    $returnValue = DB::update('update todo set name=? where id=?', 
+                    [$taskName, $task_id]);
+        
+                    if($returnValue){
+                        $success = true;
+                    }
+                }
+        
+                $data = [
+                    'task'=>$task,
+                    'success'=>$success
+                ];
+        
+                return view ('task/edit', $data);
+            }
+            function delete(Request $request){
+                $taskId = $request->input('task_id');
+        
+                $returnValue = DB::delete('DELETE from todo WHERE id=?', [$taskId]);
+        
+                if($returnValue){
+                    return redirect('/task');
+                }else {
+                    return "Error";
+                }
+            }
+
+
+    }

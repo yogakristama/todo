@@ -23,3 +23,9 @@ route::get('/task',"TaskController@index");
 route::get('/task/add',"TaskController@add");
 
 route::post('/task/add',"TaskController@add");
+
+route::get('/task/edit/{task_id}',"TaskController@edit");
+
+route::post('/task/edit/{task_id}',"TaskController@edit");
+
+route::post('/task/delete',"TaskController@delete");
