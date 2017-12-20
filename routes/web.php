@@ -35,6 +35,17 @@ route::get('/media',"MediaController@index");
 route::get('/media/upload',"MediaController@upload");
 
 route::post('/media/upload',"MediaController@upload");
+
+route::get('/page-view',"PageViewController@index");
+
+route::get('/page-view-reset',"PageViewController@reset");
+
+
+
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
