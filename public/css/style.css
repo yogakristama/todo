@@ -1,0 +1,14 @@
+.nav-color{
+    background-color: lightblue;
+}
+/* .nav-margin {
+    margin-top: 100px;
+} */
+
+.nav-color .navbar-nav>li>a{
+    color: white;
+}
+
+.nav-color .navbar-brand{
+    color: white;
+}

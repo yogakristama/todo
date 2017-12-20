@@ -1,4 +1,4 @@
-@extends('layout/layoutIndex')
+@extends('layouts/app')
 
 @section('content')
 
@@ -27,6 +27,8 @@
             <form method="POST" style="display:inline" action="/task/delete">
                 <input type="hidden" name= "task_id" value="{{ $tasks->id }}" />
                 <button type="submit" class="btn btn-danger">Delete </button>
+                 <!-- untuk keamanan dalam mengacak kode dengan laravel -->
+                 {{csrf_field()}}
             </form>
             </td>
             

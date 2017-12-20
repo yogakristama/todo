@@ -8,6 +8,12 @@ use Illuminate\HTTP\Request;
 
 class MediaController extends Controller{
 
+    public function __construct(){
+        //security cek apakah user sudah login atau belum
+        //klo belum akan redirect ke login
+        $this->middleware('auth');
+    }
+
     function index() {
         //Ambil daftar file
         $contents = Storage::disk('public')->listContents();

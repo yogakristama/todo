@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\DB;
 
 
 class TaskController extends Controller {
+
+    public function __construct(){
+        //security cek apakah user sudah login atau belum
+        //klo belum akan redirect ke login
+        $this->middleware('auth');
+    }
+    
+    
     function index(){
         $task = DB::select("Select * from TODO");
         $data = [

@@ -1,4 +1,4 @@
-@extends('layout/layoutIndex')
+@extends('layouts/app')
 
 @section('content')
 <div class="container">
@@ -26,6 +26,8 @@
                     <button type="submit" class="btn btn-success btn-small">Submit</button>
                     <a href="/media" class="btn btn-success btn-small">Back to list</a>
                 </div>
+                 <!-- untuk keamanan dalam mengacak kode dengan laravel -->
+                 {{csrf_field()}}
             </form>
         </div>
     </div>

@@ -1,4 +1,4 @@
-@extends('layout/layoutIndex')
+@extends('layout/app')
 
 @section('content')
 
@@ -20,6 +20,8 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-small">Submit</button>
                 </div>
+                 <!-- untuk keamanan dalam mengacak kode dengan laravel -->
+                 {{csrf_field()}}
             </form>
         </div>
     </div>

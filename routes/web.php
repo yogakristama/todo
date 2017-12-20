@@ -35,3 +35,6 @@ route::get('/media',"MediaController@index");
 route::get('/media/upload',"MediaController@upload");
 
 route::post('/media/upload',"MediaController@upload");
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
